@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="ISO-8859-1"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Autogate Batch File</title>
+</head>
+<body>
+
+<div class="container-fluid center-block">
+ <div class="row">
+  <div class="col-md-6 offset-md-3 text-center mt-2">
+       <h4 class="display-5">Create Autogate Batch File</h4>
+  </div>
+ <div class="col-md-6 offset-md-3 justify-content-center align-items-center mt-4">
+<form th:action="@{/files}" method="post" th:object="${csvRow}">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputPIN">Card Pin</label>
+            <input type="text" class="form-control" id="inputPIN" placeholder="Card Pin" name="inputPIN" required="required"/>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPAN">Card Pan</label>
+            <input type="text" class="form-control" id="inputPAN" placeholder="inputPAN" name="inputPAN" required="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="sourceAccountNumber">SourceAccountNumber</label>
+        <input type="text" class="form-control" id="sourceAccountNumber" placeholder="Your Account Number" name="sourceAccountNumber" required="required" />
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="expiryYear">ExpiryYear</label>
+            <input type="text" class="form-control" id="expiryYear" placeholder="YY" name="expiryYear" required="required"/>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="expiryMonth">ExpiryMonth</label>
+            <input type="text" class="form-control" id="expiryMonth" placeholder="MM" name="expiryMonth" required="required"/>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="amount">Amount</label>
+            <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount" required="required"/>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="sourceAccountType">SourceAccountType</label>
+            <select id="sourceAccountType" name="sourceAccountType" class="form-control">
+                <option selected>Your AccountType</option>
+                <option value="10">Savings</option>
+                <option value="20">Current</option>
+            </select>
+
+        </div>
+        <div class="form-group col-md-4">
+            <label for="sourceBankCbnCode">SourceBankCbnCode</label>
+
+            <input type="text" class="form-control" id="sourceBankCbnCode" name="sourceBankCbnCode" placeholder="Source CBN Code" required="required"/>
+        </div>
+    </div>
+    <div class="justify-content-center align-items-center col-md-8 offset-md-4">
+           <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+</form>
+ </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+ </div>
+</div>
+</body>
+
+</html>
